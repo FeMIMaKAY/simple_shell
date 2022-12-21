@@ -11,7 +11,7 @@ int string_length(char *pointer)
 
 	while (*(pointer + c) != '\0')
 	{
-		c++;
+	c++;
 	}
 	return (c);
 }
