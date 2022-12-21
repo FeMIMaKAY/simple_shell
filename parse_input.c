@@ -14,16 +14,16 @@ char **parse_input_string(char *buffer)
 	cmd = malloc(sizeof(char *) * 1024);
 	if (cmd == NULL)
 	{
-		perror("memory could not be allocated");
-		exit(EXIT_FAILURE);
+	perror("memory could not be allocated");
+	exit(EXIT_FAILURE);
 	}
 	token = strtok(buffer, delimeter);
 	i = 0;
 	while (token != NULL)
 	{
-		cmd[i] = token;
-		token = strtok(NULL, delimeter);
-		i++;
+	cmd[i] = token;
+	token = strtok(NULL, delimeter);
+	i++;
 	}
 	cmd[i] = NULL;
 	return (cmd);
