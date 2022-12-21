@@ -19,23 +19,23 @@ char *path_search(char *cmd)
 	i = 0;
 	while (token != NULL)
 	{
-		dirs[i] = token;
-		token = strtok(NULL, ":");
-		i++;
+	dirs[i] = token;
+	token = strtok(NULL, ":");
+	i++;
 	}
 	dirs[i] = NULL;
 
 	i = 0;
 	while (dirs[i] != NULL)
 	{
-		chdir(dirs[i]);
-		if (stat(cmd, &sb) == 0)
-		{
-			dirs[i] = _strncat(dirs[i], &ch, 1);
-			cmd = _strcat(dirs[i], cmd);
-			break;
-		}
-		i++;
+	chdir(dirs[i]);
+	if (stat(cmd, &sb) == 0)
+	{
+	dirs[i] = _strncat(dirs[i], &ch, 1);
+	cmd = _strcat(dirs[i], cmd);
+	break;
+	}
+	i++;
 	}
 	chdir(cwd);
 	return (cmd);
